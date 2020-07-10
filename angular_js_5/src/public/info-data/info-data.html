@@ -1,0 +1,22 @@
+
+<div class="container" ng-if="$ctrl.data">
+	<div class="row" style="font-family: 'Lora', serif;">
+	  Username: {{ $ctrl.data.fname}} {{$ctrl.data.lname}} <br><br>
+      Email: {{ $ctrl.data.email}} <br><br>
+      Phone: {{ $ctrl.data.phone }}<br><br>
+      Favourite Menu: {{$ctrl.data.menu}}<br><br>
+  </div>
+<div class="menu-item-tile" class="col-sm-5">
+	  
+  <div class="row" style="font-family: 'Lora', serif;">
+        <img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.data.menu}}.jpg" alt="{{$ctrl.data.found[0]['name']}}"><br>
+      <h3 class="menu-item-title"> {{$ctrl.data.found[0]['name']}}</h3>
+      <p class="menu-item-details"> {{$ctrl.data.found[0]['description']}}</p></div>
+  </div>
+  <hr class="visible-xs">
+</div>
+
+<div class="container" ng-if="!$ctrl.data">
+<h1 style="font-family: 'Lora', serif;" align="center">Not Signed Up Yet.<a ui-sref="public.signup" style="color:white"> Sign up Now! </a></h1>
+<br><br>
+	</div>

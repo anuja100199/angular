@@ -1,0 +1,66 @@
+
+<div class="container">
+  <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner">
+                            <h3 style="color:green; font-family: 'Lora', serif;"><b>SIGN UP FOR NEWSLETTER!</b></h3>
+                            <form class="row contact_form" method="post" novalidate="novalidate" style="font-family: 'Lora', serif;" name="regForm">
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="fname" name="fname"
+                                        placeholder="First name" ng-model="reg.user.fname" minlength="5" required>
+                                     <span
+							            ng-if="(regForm.fname.$error.minlength || regForm.fname.$error.required) && regForm.fname.$touched">
+							            Username must be at least 4 characters long
+							          </span>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="lname" name="lname"
+                                        placeholder="Last name" ng-model="reg.user.lname" required>
+                                      <span ng-if="regForm.lname.$touched && regForm.lname.$error.required">
+							            This field cannot be empty
+							          </span>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Email ID" ng-model="reg.user.email" required>
+                                     <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+								            Must be a valid email address: handle@domain format
+								     </span>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="number" class="form-control" id="phone" name="phone"
+                                        placeholder="Phone number" ng-model="reg.user.phone" required minlength="10">
+                                    <span
+							            ng-if="(regForm.phone.$error.minlength || regForm.phone.$error.required) && regForm.phone.$touched">
+							               Enter a valid phone number
+							        </span> 
+                                </div>
+
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="menu" name="menuid"
+                                        placeholder="Enter menu item you liked" ng-model="reg.user.menu" required>
+                                    <span
+							            ng-if="regForm.phone.$error.required && regForm.phone.$touched">
+							               Enter a menu item you like
+							        </span> 
+                                </div>
+
+                                <div class="col-md-4 form-group">
+                                   
+                                    <button type="submit" name="login" class="btn" ng-disabled="regForm.$invalid" ng-click="reg.submit()" style="background-color: #f6b319;color: #951c49;border: 2px solid #fff;">
+                                        Submit
+                                    </button>
+                                   
+                                </div>
+                            </form>
+                            <h2> {{reg.msg}} </h2>
+                        </div>
+                    </div>
+                </div>
+               <!--  <div id="info" ng-if="reg.completed">
+
+      Username: {{ reg.user.fname}} <br>
+      Email: {{ reg.user.email}} <br>
+      Phone: {{ reg.user.phone }}
+    </div> -->
+            </div>
