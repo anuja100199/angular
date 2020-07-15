@@ -77,7 +77,7 @@ function MyAppController($timeout){
 		    (function(i){  
 		        $timeout(function() {
 		            myfun(i);
-		        }, i * 1000);
+		        }, i * 2000);
 		    })(i);
 		    
 			}
