@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<title>Bubble-Sort Visualizer</title>
+</head>
+<body ng-app="MyApp" style="background-color:#00ffad">
+	<h3 align="center"> Bubble-Sort Visualizer </h3>
+	<div ng-controller="MyAppController as menu" class="container" align="center">
+		<input type="text" class="form-control col-md-6" ng-model="menu.list" placeholder = "Enter list of non-zero distinct elements"><br>
+		<button class="btn btn-primary" ng-click = "menu.sort()">Sort</button>
+		<br><br><span ng-if="menu.found!=''">After sorting array is:</span> 
+    	<button class="btn btn-info" ng-repeat = "i in menu.found">{{i}}</button>
+    	<sort-items list1="menu.li1" list2="menu.li2" iter="menu.iter" msg="menu.temp_msg" x="menu.x" y="menu.y" showiteration="menu.showIteration()" found="menu.found"></sort-items>
+	</div>
+</body>
+</html>
