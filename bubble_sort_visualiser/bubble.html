@@ -1,0 +1,10 @@
+ <br><br><button class="btn btn-primary" ng-if="menu.found!=''" ng-click = "menu.showiteration()">Show Iterations</button>
+      <br><br>
+      <div align="center">
+            
+            <button class="btn" ng-repeat = "k in menu.list1" ng-class="{'btn-danger':$index===menu.x[menu.iter] || $index===menu.y[menu.iter]}"> {{k}}</button><br><br>
+              <span ng-repeat= "k in menu.list1" ng-if="$index===menu.x[menu.iter]">Comparing {{k}}</span>
+              <span ng-repeat= "k in menu.list1" ng-if= "$index===menu.y[menu.iter]">and {{k}} </span><br>
+              <span ng-if="menu.msg">{{menu.msg}}</span><br>
+              <button class="btn" ng-repeat="k in menu.list2" ng-class="{'btn-success': 0===menu.x[menu.iter] && $index>=menu.a+1 || menu.list2===menu.found, 'btn-warning': menu.msg.indexOf('greater') > -1 && ($index===menu.x[menu.iter] || $index===menu.y[menu.iter])}">{{k}}</button></span>
+          </div>
